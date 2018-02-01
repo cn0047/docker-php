@@ -33,7 +33,7 @@ docker run -it --rm -v $PWD:/app -w /app -p 80:80 \
 
 Now open in browser [localhost](http://localhost:80/).
 
-# Nginx
+# Nginx:
 
 ```bash
 docker run -it --rm -v $PWD:/app -w /app -p 80:80 cn007b/php /bin/bash -c '
@@ -46,3 +46,8 @@ docker run -it --rm -v $PWD:/app -w /app -p 80:80 cn007b/php /bin/bash -c '
 Now open in browser [localhost/index.php](http://localhost:80/index.php).
 
 Add to end of URL [?XDEBUG_SESSION_START=PHPSTORM](http://localhost:80/index.php?XDEBUG_SESSION_START=PHPSTORM) with purpose to use Xdebug.
+
+# Configure Xdebug:
+
+Set debug port in your IDE to `9002` and create IP alias `10.254.254.254` to your host machine.
+For OSX use: `sudo ifconfig lo0 alias 10.254.254.254`.
