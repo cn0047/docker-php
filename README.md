@@ -1,4 +1,4 @@
-## PHP for DEVELOPMENT
+## PHP for DEVELOPMENT.
 
 Create test script with purpose to check docker commands:
 
