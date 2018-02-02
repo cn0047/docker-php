@@ -47,6 +47,18 @@ Now open in browser [localhost/index.php](http://localhost:80/index.php).
 
 Add to end of URL [?XDEBUG_SESSION_START=PHPSTORM](http://localhost:80/index.php?XDEBUG_SESSION_START=PHPSTORM) with purpose to use Xdebug.
 
+# Nginx with custom config:
+
+```bash
+docker run -it --rm -v $PWD:/app -w /app -p 80:80 \
+  -v $PWD/nginx.default.conf:/etc/nginx/conf.d/default.conf \
+  cn007b/php /bin/bash -c '
+    service php7.1-fpm start;
+    service nginx start;
+    tail -f /dev/stdout
+  '
+```
+
 # Configure Xdebug:
 
 Set debug port in your IDE to `9002` and create IP alias `10.254.254.254` to your host machine,
