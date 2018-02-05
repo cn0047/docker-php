@@ -5,8 +5,9 @@ RUN curl -OL https://github.com/google/protobuf/releases/download/v2.6.1/protobu
     && tar xzf protobuf-2.6.1.tar.gz \
     && cd protobuf-2.6.1 \
     && apt-get update && apt-get install -y build-essential \
-    && ./configure && make && make check && make install \
-    && ldconfig
+    && ./configure && make && make install \
+    && ldconfig \
+    && cd - && rm protobuf-2.6.1.tar.gz && rm -rf protobuf-2.6.1
 
 # protobuf 3
 #RUN curl -OL https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3.5.1-linux-x86_64.zip \
@@ -18,3 +19,9 @@ RUN curl -OL https://github.com/google/protobuf/releases/download/v2.6.1/protobu
 #    && pecl install protobuf-3.5.1 \
 #    && echo 'extension=protobuf.so' >> /etc/php/7.1/mods-available/protobuf.ini \
 #    && rm protoc-3.5.1-linux-x86_64.zip
+
+# php-protobuf
+RUN pecl channel-update pecl.php.net \
+    && pear install Console_CommandLine \
+    && pear channel-discover pear.pollinimini.net \
+    && pear install drslump/Protobuf-beta

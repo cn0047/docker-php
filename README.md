@@ -24,6 +24,12 @@ docker run -it --rm -v $PWD:/app -w /app -e PHP_IDE_CONFIG='serverName=docker' \
 docker run -it --rm cn007b/php composer
 ```
 
+# Protocol Buffers (ptotobuf):
+
+```bash
+docker run -it --rm cn007b/php protoc --version
+```
+
 # Built-in web server:
 
 ```bash
