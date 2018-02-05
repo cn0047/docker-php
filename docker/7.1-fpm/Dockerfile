@@ -1,4 +1,4 @@
-FROM cn007b/php:7.1-composer
+FROM cn007b/php:7.1-protobuf
 
 # php
 RUN apt-get install -y php7.1 php7.1-fpm
