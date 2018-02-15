@@ -1,5 +1,9 @@
 ## PHP for DEVELOPMENT.
 
+[![Docker Build Status](https://img.shields.io/docker/build/cn007b/php.svg)](https://hub.docker.com/r/cn007b/php/)
+[![Docker Automated build](https://img.shields.io/docker/automated/cn007b/php.svg)](https://hub.docker.com/r/cn007b/php/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/cn007b/php.svg)](https://hub.docker.com/r/cn007b/php/)
+
 Create test script with purpose to check docker commands:
 
 ```bash
