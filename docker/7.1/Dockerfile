@@ -1,6 +1,6 @@
-FROM ubuntu:17.10
+FROM cn007b/ubuntu:17.10
 
-RUN apt-get update && apt-get install -y git vim curl apt-utils telnet net-tools unzip libpcre3-dev
+RUN apt-get update
 
 # php
 RUN apt-get install -y \
@@ -11,7 +11,7 @@ RUN apt-get install -y \
     php7.1-mysql php7.1-pdo php-mongodb php7.1-sqlite php7.1-sqlite3 php7.1-pgsql \
     php7.1-redis \
     php7.1-memcache \
-    libzmq5 libzmq5-dev php-zmq \
+    php-zmq \
     php-pear php-soap php-ssh2
 
 # xdebug
