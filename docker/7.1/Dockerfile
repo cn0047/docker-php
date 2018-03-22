@@ -1,4 +1,4 @@
-FROM cn007b/ubuntu:17.10
+FROM cn007b/ubuntu:17.10-protobuf-3
 
 RUN apt-get update
 
@@ -27,7 +27,7 @@ RUN apt-get install -y php-xdebug \
     && echo 'xdebug.idekey=PHPSTORM'            >> /etc/php/7.1/mods-available/xdebug.ini
 
 # php conf
-RUN echo 'display_errors=On'              >> /etc/php/7.1/cli/php.ini \
+RUN    echo 'display_errors=On'           >> /etc/php/7.1/cli/php.ini \
     && echo 'display_startup_errors=On'   >> /etc/php/7.1/cli/php.ini \
     && echo 'track_errors=On'             >> /etc/php/7.1/cli/php.ini \
     && echo 'log_errors=On'               >> /etc/php/7.1/cli/php.ini \
@@ -36,5 +36,9 @@ RUN echo 'display_errors=On'              >> /etc/php/7.1/cli/php.ini \
 # for Yii 1 template engine
 RUN echo 'short_open_tag=On' >> /etc/php/7.1/cli/php.ini
 
-# For big files upload.
+# for big files upload.
 RUN echo 'upload_max_filesize=50M' >> /etc/php/7.1/cli/php.ini
+
+# composer
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
