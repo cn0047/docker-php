@@ -42,3 +42,9 @@ RUN echo 'upload_max_filesize=50M' >> /etc/php/7.1/cli/php.ini
 # composer
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
+
+# phpcs
+RUN curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
+    && chmod +x phpcs.phar \
+    && cp phpcs.phar /usr/local/bin/phpcs \
+    && cp phpcs.phar /usr/bin/phpcs
