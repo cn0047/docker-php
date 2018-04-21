@@ -1,5 +1,7 @@
 FROM cn007b/ubuntu:17.10-protobuf-3
 
+MAINTAINER Vladimir Kovpak <cn007b@gmail.com>
+
 RUN apt-get update
 
 # php
@@ -47,4 +49,5 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
     && chmod +x phpcs.phar \
     && cp phpcs.phar /usr/local/bin/phpcs \
-    && cp phpcs.phar /usr/bin/phpcs
+    && cp phpcs.phar /usr/bin/phpcs \
+    && rm phpcs.phar

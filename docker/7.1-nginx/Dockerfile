@@ -1,5 +1,7 @@
 FROM cn007b/php:7.1-protobuf-3
 
+MAINTAINER Vladimir Kovpak <cn007b@gmail.com>
+
 # php-fpm
 RUN apt-get install -y php7.1 php7.1-fpm
 
